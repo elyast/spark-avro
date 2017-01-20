@@ -72,6 +72,8 @@ EclipseKeys.eclipseOutput := Some("target/eclipse")
 
 publishMavenStyle := true
 
+publishTo in ThisBuild := Some(Resolver.file("localM2", new File( "target/m2repo/")))
+
 releaseCrossBuild := true
 
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
@@ -101,8 +103,6 @@ pomExtra :=
       <url>https://github.com/vlyubin</url>
     </developer>
   </developers>
-
-bintrayReleaseOnPublish in ThisBuild := false
 
 import ReleaseTransformations._
 
